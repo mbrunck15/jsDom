@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Artikel</th>
+        <th>Anzahl</th>
+        <th>Einzelpreis</th>
+        <th>Preis</th>
+    </tr>
+    <tr>
+        <td><input type="text" name="f1" value="Knopf"></td>
+        <td><input type="text" class="anzahl" name="f2" value="10"></td>
+        <td><input type="text" class="einzelpreis" name="f3" value="0.15"></td>
+        <td><input type="text" class="preis" name="a1"></td>
+    </tr>
+    <tr>
+        <td><input type="text" name="f4" value="Faden"></td>
+        <td><input type="text" class="anzahl" name="f5" value="1"></td>
+        <td><input type="text" class="einzelpreis" name="f6" value="1.60"></td>
+        <td><input type="text" class="preis" name="a2"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <button onclick="rechne()">Rechne</button>
+        </td>
+        <td><P>Summe:</P></td>
+        <td><input type="text" id="summe" name="a3"></td>
+    </tr>
+    <script>
+        const rechne = function () {
+            const as = document.querySelectorAll(".anzahl");
+            const es = document.querySelectorAll(".einzelpreis");
+            const ps = document.querySelectorAll(".preis");
+            let summe = 0;
+            for (let i = 0; i < as.length; i++) {
+                ps[i].value = Number(as[i].value) * Number(es[i].value);// zeilenweise
+                summe += Number(ps[i].value); // summe aller preise
+            }
+            document.querySelector("#summe").value = summe;
+
+
+            // const f2=Number(document.querySelector("#f2").value);
+            // const f3=Number(document.querySelector("#f3").value);
+            // const f5=Number(document.querySelector("#f5").value);
+            // const f6=Number(document.querySelector("#f6").value);
+            // document.querySelector("#a1").value = f2*f3;
+            // document.querySelector("#a2").value = f5*f6;
+            // document.querySelector("#a3").value = f2*f3+f5*f6;
+        }
+
+
+    </script>
+
+
+</table>
+
+</body>
+</html>

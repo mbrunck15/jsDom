@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 id="demo"></h2>
+<input type="text" id="content">
+<p id="demo2"></p>
+<p>noch ein Text</p>
+<script>
+//    document.getElementById("demo").innerHTML = "Hallo World";
+    document.querySelector("#demo").innerHTML = "Hallo World";  // neue schreibweise
+ //   document.getElementById("content").value = "Guten Morgen";
+    document.querySelector("#content").value= "guten morgen";  // neue schreibweise
+    const nodelist = document.querySelectorAll("p");
+    for (const nodeListElements of nodelist) {
+
+        nodeListElements.style.backgroundColor = "blue";
+    }
+
+
+</script>
+
+</body>
+</html>
