@@ -31,6 +31,8 @@
 </div>
 
 <script>
+    let xpos = 0;
+    let ypos = 0;
     function myMove() {
         let id = null;
         const elem = document.getElementById("animate");
@@ -46,10 +48,12 @@
             if (pos < 350) {
                 //  pos++;
                 // elem.style.top = pos + "px";
-                elem.style.left = pos + "px";
+                ypos++
+                elem.style.left = ypos + "px";
             } else if (pos > 350) {
                 //    pos++;
-                elem.style.top = pos - 350 + "px";
+                xpos++
+                elem.style.top = xpos  + "px";
             }
         }
     }
